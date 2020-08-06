@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',  # application website
     'api.apps.ApiConfig',  # application api
     'authenticate.apps.AuthenticateConfig',  # application authenticate
+    'rest_framework',  # app needed by application api
+    'rest_framework.authtoken',  # app needed by authentication application api (1/2)
 ]
 
 AUTH_USER_MODEL = 'website.CustomUser'   # For custom user
@@ -112,6 +114,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',  # app needed by authentication application api (2/2)
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',   # app needed by authentication application api (3/2)
+        )
+
+}
 
 
 # Internationalization
