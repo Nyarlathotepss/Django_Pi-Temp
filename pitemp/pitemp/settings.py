@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pitemp',
-        'USER': 'pitemp_admin',
+        'USER': 'pitempadmin',
         'PASSWORD': 'python123',
         'HOST': 'localhost',
         'PORT': '5432',
