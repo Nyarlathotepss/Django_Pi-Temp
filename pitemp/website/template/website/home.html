@@ -1,0 +1,45 @@
+{% extends "website/index.html" %}
+{% load static %}
+        <!-- Masthead-->
+        <section id="masterhead">
+            {% block masterhead %}
+                <header class="masthead bg-primary text-white text-center">
+                    <div class="container d-flex align-items-center flex-column">
+                        <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src='{% static "website/assets/img/logo.png" %}' alt="" /><!-- Masthead Heading-->
+                        <h1 class="masthead-heading text-uppercase mb-0">PiTemp</h1>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom divider-light">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+                        <!-- Masthead Subheading-->
+                        <p class="masthead-subheading font-weight-light mb-0">Superviseur de températures</p>
+                    </div>
+                </header>
+            {% endblock masterhead %}
+        </section>
+
+        <!-- Content Section-->
+        <section class="page-section" id="content">
+            {% block content %}
+                <div class="container">
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Introduction</h2>
+
+                        <p id="intro">Bienvenue sur le projet PiTemp.<br>
+                            <br>
+                            Les offres domotiques ne cessent de croitrent depuis plusieurs années.<br>
+                            Avec l'explosion des objets connectés il devient évident aujourd'hui pour le particulier de pouvoir "piloter" sa maison a distance.
+                            De nombreuses entreprises proposent, aujourd'hui, des formules clé en main pour de la domotique d'une maison de particulier.<br>
+                            <br>
+                            Cela met en perspective 2 problèmes :<br>
+                            1/ Vous êtes en général obligé d'acheter seuleument les produits du dit constructeur.<br>
+                            2/ Les mises à jour du framework sont dépendantes du contructeur.<br>
+                            L'objectif du projet c'est de pouvoir fournir une interface opensource aux personnes désirant, dans un premier temps, afficher la
+                            température à un instant T d'une pièce de leur maison.<br>
+                            Pour mettre en place la solution proposée vous aures besoin d'un Raspberry Pi ainsi que d'une sonde de temperature de prégérence
+                            de type Dallas DS18B20.
+                        </p>
+                </div>
+            {% endblock content %}
+        </section>

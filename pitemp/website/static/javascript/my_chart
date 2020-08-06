@@ -1,0 +1,13 @@
+var ctx = document.getElementById('myChart');
+console.log("test display :", data[0]['x']);
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: date,
+        datasets: [{
+            label: 'degres.',
+            backgroundColor: "#F5DEB3",
+            data: data,
+        }]
+    },
+});
