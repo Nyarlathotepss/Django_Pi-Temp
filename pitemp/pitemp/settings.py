@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'authenticate.apps.AuthenticateConfig',  # application authenticate
 ]
 
+AUTH_USER_MODEL = 'website.CustomUser'   # For custom user
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -130,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
