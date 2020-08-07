@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'm(1uux62c4=47-_u0%2qtf81q#d(sml*o&s#9#@%igvy($50hs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "164.90.234.183"]
 
 
 # Application definition
@@ -85,11 +88,11 @@ WSGI_APPLICATION = 'pitemp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pitemp',
-        'USER': 'pitemp_admin',
-        'PASSWORD': 'python123',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USERNAME'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': os.environ.get('DB_PORT'),
         'TEST': {
             'NAME': 'mytestdatabase',
         },
