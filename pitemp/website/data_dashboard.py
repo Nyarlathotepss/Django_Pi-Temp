@@ -20,7 +20,8 @@ class DataDashboard:
             for temp in list_temp:
                 number = temp + number
             average = number / 4
-            self.average = str(average) + "°C"
+            average = str(average) + "°C"
+            self.average = average[:4]
         else:
             return "Vide"
 
